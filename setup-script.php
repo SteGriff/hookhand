@@ -1,5 +1,7 @@
 <?php
 
+// setup-script - called by the setup.htm page
+
 header("content-type: text/plain");
 
 //The credentials file just needs to set $deployment_key to some secret value.
@@ -11,20 +13,19 @@ require 'config.php';
 	$deployment_key
 	$git
 	$remote
-	$project_name
+	$destination_dir
 */
 
 $supplied_key = $_POST['key'] ;
 
 if ($supplied_key == $deployment_key)
 {
-	$output = `2>&1 $git clone $remote $project_name`;
+	$output = `2>&1 $git clone $remote $destination_dir`;
 	echo "The local terminal says:\r\n";
 	echo $output;
-	$expected = "Cloning into $project_name...";
-	if (strstr($output, $expected) !== false)
+	if (!(stristr($output, 'error') || stristr($output, 'fatal')))
 	{
-		echo "(Looks good to me - we appear to be set up)";
+		echo "(The process appears to have succeeded! Congrats!)";
 	}
 }
 else
