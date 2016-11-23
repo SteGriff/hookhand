@@ -33,7 +33,7 @@ if ($supplied_key == $deployment_key)
 	if (!stristr($output, 'error') && !stristr($output, 'fatal'))
 	{
 		echo "\r\n(The process appears to have succeeded! Congrats!)\r\n";
-		echo "You can now delete hookhand_setup.php and hookhand.htm \r\n";
+		echo "You can now delete setup-script.php and setup.htm \r\n";
 	}
 }
 else

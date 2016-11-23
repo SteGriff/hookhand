@@ -11,7 +11,7 @@ Dead simple PHP webhook deploy script. Works in a Linux shared hosting environme
  * Rename `credentials.example.php` to `credentials.php` and change the deployment key inside the file to a secret value.
  * Alter the `config.php` file to the values you want
  * Upload the files to the target dir
- * Access `setup.htm` in a web browser, enter your deployment key and press **Clone**
+ * Access `hookhand.htm` in a web browser, enter your deployment key and press **Clone**
 
 ### Setting up GitHub webhooks
 
