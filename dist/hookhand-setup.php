@@ -1,6 +1,6 @@
 <?php
 
-// setup-script - called by the setup.htm page
+// hookhand-setup - called by the hookhand.htm setup page
 
 header("content-type: text/plain");
 

@@ -1,16 +1,29 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-	<title>git-deploy setup tool</title>
+	<title>Hookhand</title>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 </head>
 <body>
 
+<h1>Hookhand</h1>
+
+<h2>Setup</h2>
 <p>This will clone the repository configured in config.php</p>
 
-<form action="setup-script.php" method="POST">
+<form action="hookhand-setup.php" method="POST">
 	<label>Deployment Key: <input type="password" id="key" name="key"></label>
 	<button>Clone</button>
+</form>
+
+<h2>Test deployment</h2>
+<p><s>POST with X-Hub-Signature</s></p>
+
+<p><s>GET with key</s></p>
+
+<form action="deploy.php" method="GET">
+	<label>Deployment Key: <input type="password" id="key" name="key"></label>
+	<button>Pull</button>
 </form>
 
 </body>
