@@ -30,10 +30,14 @@ if ($is_post && isset($headers['X-Hub-Signature']))
 	echo "Hash at server  : $deployment_key \r\n";
 	echo "Hash from client: $supplied_key \r\n";
 }
-else
+else if ($allow_get === true)
 {
 	/* [Option 2] Handle a GET with key, for clients that don't support X-Hub-Signature */
 	$supplied_key = $_GET['key'];
+}
+else
+{
+	echo "No X-Hub-Signature was received in POST request, and GET is disabled. Deployment impossible!";
 }
 
 if ($supplied_key == $deployment_key)

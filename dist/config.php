@@ -3,6 +3,7 @@
 $git = "git";
 $remote = "https://github.com/stegriff/sscp";
 $destination_dir = ".";
+$allow_get = false;
 
 function sh($commands)
 {
