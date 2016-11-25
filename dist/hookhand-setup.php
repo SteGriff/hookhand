@@ -30,7 +30,7 @@ if ($supplied_key == $deployment_key)
 	
 	echo "The local terminal says:\r\n";
 	echo $output;
-	if (!stristr($output, 'error') && !stristr($output, 'fatal'))
+	if (stripos($output, 'error') === false && stripos($output, 'fatal') === false)
 	{
 		echo "\r\n(The process appears to have succeeded! Congrats!)\r\n";
 		echo "You can now delete hookhand_setup.php and hookhand.htm \r\n";
