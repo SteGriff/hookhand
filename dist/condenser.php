@@ -10,8 +10,16 @@ foreach($files_to_condense as $filename)
 {
 	echo "==\r\nCondense $filename\r\n";
 
-	condense($filename);
+	$success = condense($filename);
+	echo "Success: $success\r\n";
+	
+	if ($success)
+	{
+		//TODO delete the original file with unlink()
+	}
 }
+
+echo "Finished\r\n";
 
 function condense($filename)
 {
@@ -33,7 +41,9 @@ function condense($filename)
 	
 	//echo "\r\n====\r\nAfter:\r\n$content";
 	
-	//TODO Write $content back into the file
+	//Write $content back into the file
+	$bytes_written = file_put_contents($filename, $content);
+	return $bytes_written !== false;
 }
 
 
