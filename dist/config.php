@@ -10,4 +10,4 @@ function sh($commands)
 	return `2>&1 $commands`;
 }
 
-?>
+// Don't close this php block if you want to be able to use condenser.php
